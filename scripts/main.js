@@ -5,23 +5,27 @@
 
 var state = startApp()
 
-if(state.obj?.name){
+//optional chaining
+if(state?.name){
     console.log("hi!")
     // document.body.bgColor = ""
-    document.body.classList.add("game")
+    
     reloadScript("../scripts/game.js")
 }
 else{
+    const gameDiv = document.getElementById('game')
+    gameDiv.style.display = "none"
+    gameDiv.style.transform = "scale(0)"
     const {form, user} = renderForm() //obj decunstuction
 
     form.addEventListener("submit", (e) => {
         e.preventDefault()
 
-        state.obj['name'] = user.value
+        state['name'] = user.value
         form.remove()
 
-        localStorage.setItem("user", JSON.stringify(state.obj))
-        reloadScript("../scripts/main.js")
+        localStorage.setItem("user", JSON.stringify(state))
+        reloadScript("../scripts/game.js")
     })
 }
 
@@ -39,10 +43,7 @@ function startApp(){
     const obj = JSON.parse(localStorage.getItem("user") || "{}") 
     // const userName = obj?.name //optional chaining
 
-    return {
-        obj
-        // userName
-    }
+    return obj
 }
 
 
