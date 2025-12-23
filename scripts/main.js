@@ -3,10 +3,10 @@
 
 // console.log(startApp().userName)
 
-var state = startApp()
-
+const obj = startApp()
+// console.log(this)
 //optional chaining
-if(state?.name){
+if(obj?.name){
     console.log("hi!")
     // document.body.bgColor = ""
     
@@ -16,15 +16,16 @@ else{
     const gameDiv = document.getElementById('game')
     gameDiv.style.display = "none"
     gameDiv.style.transform = "scale(0)"
+
     const {form, user} = renderForm() //obj decunstuction
 
     form.addEventListener("submit", (e) => {
         e.preventDefault()
 
-        state['name'] = user.value
+        obj['name'] = user.value
         form.remove()
 
-        localStorage.setItem("user", JSON.stringify(state))
+        localStorage.setItem("user", JSON.stringify(obj))
         reloadScript("../scripts/game.js")
     })
 }

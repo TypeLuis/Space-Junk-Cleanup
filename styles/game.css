@@ -1,6 +1,41 @@
+/* 
+    user-select: none; 
+    User can't select anything, they wont be able to highlight text
+*/
+
+
 #game{
-    transition: transform 0.5s ease;
+    transition: transform 1s ease;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    
+    user-select: none; 
+    /* cursor: pointer; */
+}
+
+
+section {
+    font-size: larger;
+    /* background-color: rgba(black, black, black, .2); */
+    background-color: rgba(0, 0, 0, 0.404);
+    color: whitesmoke;
+    /* height: 20%; */
+    width: max-content;
+    margin: 1em 0 0 1em;
+    /* width: 20%; */
+
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: .5em;
+    padding: 2em;
+    border-radius: 20px;
+    user-select: text;
+    /* height: calc(100% + 10px); */
 }
