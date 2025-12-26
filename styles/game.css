@@ -38,4 +38,21 @@ section {
     border-radius: 20px;
     user-select: text;
     /* height: calc(100% + 10px); */
+
+
+    & button{
+        height: 40px;
+        width: 90px;
+        border: none;
+        transition: transform 0.2s ease;
+        cursor: pointer;
+        border-radius: 15px;
+        &:hover {
+            opacity: 0.7;
+        }
+    
+        &:active {
+            transform: scale(0.9);
+        }
+    }
 }
