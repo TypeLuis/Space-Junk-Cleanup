@@ -3,9 +3,10 @@
 
 const obj = startApp()
 // console.log(this)
+
 //optional chaining
 if(obj?.name){
-    console.log("hi!")
+    // console.log("hi!")
     // document.body.bgColor = ""
     
     reloadScript("../scripts/game.js")
@@ -16,6 +17,8 @@ else{
     gameDiv.style.transform = "scale(0)"
 
     const {form, user} = renderForm() //obj decunstuction
+    // const form = renderForm().form
+    // const user = renderForm().user
 
     form.addEventListener("submit", (e) => {
         e.preventDefault()

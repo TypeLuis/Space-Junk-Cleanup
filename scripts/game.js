@@ -211,8 +211,8 @@ function loop(now) {
     last = now
 
     // ship controls
-    const turnSpeed = 4.2   // radians per second
-    const thrust = 360      // acceleration
+    const turnSpeed = 4.2   
+    const thrust = 360     
     const friction = 0.99
 
     if (keys["ArrowLeft"] || keys["KeyA"]) ship.angle -= turnSpeed * dt
